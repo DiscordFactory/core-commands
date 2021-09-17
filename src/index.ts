@@ -1,4 +1,7 @@
 import { BaseAddon } from '@discord-factory/core-next'
+import MakeCommand from './commands/MakeCommand'
+import MakeHook from './commands/MakeHook'
+import MakeEvent from './commands/MakeEvent'
 
 export default class Index extends BaseAddon<Index> {
   public addonName = 'core-commands'
@@ -13,6 +16,9 @@ export default class Index extends BaseAddon<Index> {
 
   public registerCLI () {
     return [
+      MakeCommand,
+      MakeHook,
+      MakeEvent,
     ]
   }
 
@@ -26,6 +32,6 @@ export default class Index extends BaseAddon<Index> {
   }
 
   public defineKeys () {
-    return ['DRIVER', 'PATH']
+    return []
   }
 }
