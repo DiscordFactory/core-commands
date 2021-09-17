@@ -1,0 +1,9 @@
+import { Event, BaseEvent } from 'ioc:factory/Core/Event'
+import { Message } from 'ioc:factory/Discord/Event'
+
+@Event('myEvent')
+export default class $fileName extends BaseEvent {
+  public async run (message: Message, args: string[]): Promise<void> {
+    // Your code here
+  }
+}
