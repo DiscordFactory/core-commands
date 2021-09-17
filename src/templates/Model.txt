@@ -1,6 +1,0 @@
-import { Model, BaseModel } from '@discord-factory/storage-next'
-
-@Model('$tableName')
-export default class $modelName extends BaseModel {
-  public id: string
-}
