@@ -1,0 +1,8 @@
+import { Hook, BaseHook } from 'ioc:factory/Core/Hook'
+
+@Hook('myHook')
+export default class $fileName extends BaseHook {
+  public async run (params: any[]): Promise<void> {
+    // Your code here
+  }
+}
