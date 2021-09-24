@@ -1,5 +1,4 @@
 import { Event, BaseEvent } from 'ioc:factory/Core/Event'
-import { Message } from 'discord.js'
 
 @Event('myEvent')
 export default class $fileName extends BaseEvent {
