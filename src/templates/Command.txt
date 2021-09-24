@@ -1,5 +1,5 @@
 import { Command, BaseCommand } from 'ioc:factory/Core/Command'
-import { CommandInteraction } from 'ioc:factory/Discord/Event'
+import { CommandInteraction } from 'discord.js'
 
 @Command({
   scope: ['guildId'],
