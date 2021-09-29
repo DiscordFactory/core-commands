@@ -1,0 +1,15 @@
+import { ContextMenu, BaseContextMenu } from 'ioc:factory/Core/ContextMenu'
+import { ContextMenuInteraction } from 'discord.js'
+
+@ContextMenu({
+  scope: 'GUILDS',
+  options: {
+    name: '$fileNameLower',
+    type: 'USER'
+  }
+})
+export default class $fileName extends BaseContextMenu {
+  public async run (interaction: ContextMenuInteraction): Promise<void> {
+    // Your code here
+  }
+}

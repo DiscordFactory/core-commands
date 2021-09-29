@@ -2,6 +2,8 @@ import { BaseAddon } from '@discord-factory/core-next'
 import MakeCommand from './commands/MakeCommand'
 import MakeHook from './commands/MakeHook'
 import MakeEvent from './commands/MakeEvent'
+import MakeContextMenu from './commands/MakeContextMenu'
+import MakeEcosystem from './commands/MakeEcosystem'
 
 export default class Index extends BaseAddon<Index> {
   public addonName = 'core-commands'
@@ -19,6 +21,8 @@ export default class Index extends BaseAddon<Index> {
       MakeCommand,
       MakeHook,
       MakeEvent,
+      MakeContextMenu,
+      MakeEcosystem,
     ]
   }
 
