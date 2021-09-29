@@ -1,16 +1,7 @@
-import { Command, BaseCommand } from 'ioc:factory/Core/Command'
-import { CommandInteraction } from 'discord.js'
-
-@Command({
-  scope: 'GUILDS',
-  options: {
-    name: '$fileNameLower',
-    description: '$fileNameLower description',
-    options: []
-  }
-})
-export default class $fileName extends BaseCommand {
-  public async run (interaction: CommandInteraction): Promise<void> {
-    // Your code here
-  }
+module.exports = {
+  apps : [{
+    name : 'Discord Factory application',
+    script : 'npm',
+    args : 'start'
+  }]
 }
