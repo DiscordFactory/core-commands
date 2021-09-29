@@ -16,22 +16,36 @@ yarn add @discord-factory/core-commands@lasted
 ```
 
 ## How to use
-The `@discord-factory/core-commands` module provides you with 3 commands allowing you to instantly create a command, event and a hook :
+The `@discord-factory/core-commands` module provides commands allowing you to instantly create a command :
 
 Make command
 ```
-npm run make:command MyCommand
-yarn make:command MyCommand
+npm run factory make:command MyCommand
+yarn factory make:command MyCommand
 ```
+
 Make event
 ```
-npm run make:event MyEvent
-yarn make:event MyEvent
+npm run factory make:event MyEvent
+yarn factory make:event MyEvent
 ```
+
 Make hook
 ```
-npm run make:hook MyHook
-yarn make:hook MyHook
+npm run factory make:hook MyHook
+yarn factory make:hook MyHook
+```
+
+Make context menu
+```
+npm run factory make:context-menu MyContextMenu
+yarn factory make:context-menu MyContextMenu
+```
+
+Make context menu
+```
+npm run factory pm2:ecosystem
+yarn factory pm2:ecosystem
 ```
 
 ## License
