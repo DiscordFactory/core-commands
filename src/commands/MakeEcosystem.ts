@@ -1,16 +1,19 @@
-import { CLICommand, BaseAddonCommand } from '@discord-factory/core-next'
+import { CLI, BaseCli } from '@discord-factory/core-next'
 import Addon from '../index'
 import path from 'path'
 import fs from 'fs'
 import Logger from '@leadcodedev/logger'
 
-@CLICommand({
-  name: 'Create ecosystem file',
+@CLI({
   prefix: 'pm2:ecosystem',
-  usages: []
+  description: 'Generate a new ecosystem.config.js file at root project',
+  config: {
+    allowUnknownOptions: false,
+    ignoreOptionDefaultValue: false
+  }
 })
-export default class MakeEcosystem extends BaseAddonCommand<Addon> {
-  public async run (filename: string): Promise<void> {
+export default class MakeEcosystem extends BaseCli<Addon> {
+  public async run (): Promise<void> {
     const targetFile = path.join(process.cwd(), 'ecosystem.config.js')
 
     const templateFile = await fs.promises.readFile(
@@ -21,7 +24,7 @@ export default class MakeEcosystem extends BaseAddonCommand<Addon> {
       await fs.promises.writeFile(targetFile, templateFile)
       Logger.send('info', 'Ecosystem file was create in your root project.')
     } catch (e) {
-      console.log(e)
+      Logger.send('error', 'An error has occurred')
     }
   }
 }

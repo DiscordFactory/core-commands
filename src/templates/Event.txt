@@ -1,8 +1,9 @@
 import { Event, BaseEvent } from 'ioc:factory/Core/Event'
+$imports
 
-@Event('myEvent')
+@Event('$event')
 export default class $fileName extends BaseEvent {
-  public async run (args: string[]): Promise<void> {
+  public async run ($params): Promise<void> {
     // Your code here
   }
 }

@@ -1,17 +1,21 @@
-import { CLICommand, BaseAddonCommand } from '@discord-factory/core-next'
+import { CLI, BaseCli, CliContextRuntime } from '@discord-factory/core-next'
 import Addon from '../index'
 import path from 'path'
 import fs from 'fs'
 import Logger from '@leadcodedev/logger'
 
-@CLICommand({
-  name: 'Create context menu file',
+@CLI({
   prefix: 'make:context-menu',
-  usages: ['filename']
+  description: 'Generate a new context-menu file at the given location',
+  args: ['filename'],
+  config: {
+    allowUnknownOptions: false,
+    ignoreOptionDefaultValue: false
+  }
 })
-export default class MakeContextMenu extends BaseAddonCommand<Addon> {
-  public async run (filename: string): Promise<void> {
-    const location = path.parse(filename)
+export default class MakeContextMenu extends BaseCli<Addon> {
+  public async run ({ args }: CliContextRuntime): Promise<void> {
+    const location = path.parse(args.filename as string)
     const targetFile = path.join(process.cwd(), 'src', location.dir, `${location.name}.ts`)
 
     const templateFile = await fs.promises.readFile(
@@ -29,7 +33,7 @@ export default class MakeContextMenu extends BaseAddonCommand<Addon> {
       await fs.promises.writeFile(targetFile, fileData)
       Logger.send('info', `File was created in ${targetFile.replace(/\\/g, '\\\\')}`)
     } catch (e) {
-      console.log(e)
+      Logger.send('error', 'An error has occurred')
     }
   }
 }
