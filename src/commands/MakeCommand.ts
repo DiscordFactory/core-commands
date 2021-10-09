@@ -33,7 +33,7 @@ export default class MakeCommand extends BaseCli<Addon> {
       await fs.promises.writeFile(targetFile, fileData)
       Logger.send('info', `File was created in ${targetFile.replace(/\\/g, '\\\\')}`)
     } catch (e) {
-      console.log(e)
+      Logger.send('error', 'An error has occurred')
     }
   }
 }

@@ -24,7 +24,7 @@ export default class MakeEcosystem extends BaseCli<Addon> {
       await fs.promises.writeFile(targetFile, templateFile)
       Logger.send('info', 'Ecosystem file was create in your root project.')
     } catch (e) {
-      console.log(e)
+      Logger.send('error', 'An error has occurred')
     }
   }
 }
